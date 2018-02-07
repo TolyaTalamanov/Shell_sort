@@ -41,5 +41,19 @@ std::vector<int> get_sedjvik_distances(int size_array)
 	return distances;
 }
 
-#endif //SHELL_LIB_INCLUDE_SHELL_SORT_H
+template<typename Iterator>
+void shell_sort(Iterator first, Iterator last)
+{
+	if (!(first < last))
+        return;
+	
+	int  size_array     = std::distance(first, last);
+	auto distances      = get_sedjvik_distances(size_array);
+	
+	std::for_each(distances.rbegin(), distances.rend(),
+				[&first, &last](const auto& increment){
+					insert_sort_with_increment(first, last, increment);
+				});
+}
 
+#endif //SHELL_LIB_INCLUDE_SHELL_SORT_H
