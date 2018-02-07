@@ -23,5 +23,12 @@ void insert_sort(Iterator first, Iterator last)
 	insert_sort_with_increment(first, last, 1);
 }
 
+int get_sedjvik_element(int s)
+{
+	return (s % 2 == 0) ? (9 * (1 << s)	- 9 * (1 <<  (s / 2)     ) + 1)
+						: (8 * (1 << s) - 6 * (1 << ((s + 1) / 2)) + 1);
+}
+
+
 #endif //SHELL_LIB_INCLUDE_SHELL_SORT_H
 
