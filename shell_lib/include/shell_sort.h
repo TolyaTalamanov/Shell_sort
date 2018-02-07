@@ -29,6 +29,17 @@ int get_sedjvik_element(int s)
 						: (8 * (1 << s) - 6 * (1 << ((s + 1) / 2)) + 1);
 }
 
+std::vector<int> get_sedjvik_distances(int size_array)
+{
+	std::vector<int> distances;
+	int s = 0;
+	do{
+		distances.emplace_back(get_sedjvik_element(s));
+		++s;
+	} while(3 * distances.back() < size_array);
+	distances.pop_back();
+	return distances;
+}
 
 #endif //SHELL_LIB_INCLUDE_SHELL_SORT_H
 
