@@ -7,6 +7,7 @@
 #include <iterator>
 #include <vector>
 #include <chrono>
+#include <iterator>
 
 using Time = std::chrono::high_resolution_clock;
 using ms   = std::chrono::milliseconds;
@@ -15,9 +16,18 @@ using fms  = std::chrono::duration<float, std::milli>;
 template<typename Iterator>
 void insert_sort_with_increment(Iterator first, Iterator last, int increment)
 {
-    for (auto i = first + increment; i != last; ++i)
-        for (auto j = i; j != first && *j < *(j - increment); --j)
-            std::iter_swap(j - increment, j);
+	int tmp;
+	int j;
+	int size_array = std::distance(first, last);
+	for(int i = increment; i < size_array; ++i ){
+		tmp = *(first + i);
+		j = i;
+		while(j >= increment && tmp < *(first + j - increment)){
+			*(first + j) = *(first + j - increment);
+			j -= increment;
+		}
+		*(first + j) = tmp;
+	}
 }
 
 template<typename Iterator>
@@ -31,7 +41,7 @@ void insert_sort(Iterator first, Iterator last)
 int get_sedjvik_element(int s)
 {
 	return (s % 2 == 0) ? (9 * (1 << s)	- 9 * (1 <<  (s / 2)     ) + 1)
-						: (8 * (1 << s) - 6 * (1 << ((s + 1) / 2)) + 1);
+		: (8 * (1 << s) - 6 * (1 << ((s + 1) / 2)) + 1);
 }
 
 std::vector<int> get_sedjvik_distances(int size_array)
@@ -46,15 +56,14 @@ std::vector<int> get_sedjvik_distances(int size_array)
 	return distances;
 }
 
-template<typename Iterator>
+	template<typename Iterator>
 void shell_sort(Iterator first, Iterator last)
 {
 	if (!(first < last))
-        return;
-	
+		return;
+
 	int  size_array     = std::distance(first, last);
 	auto distances      = get_sedjvik_distances(size_array);
-	
 	std::for_each(distances.rbegin(), distances.rend(),
 				[&first, &last](const auto& increment){
 					insert_sort_with_increment(first, last, increment);
