@@ -4,8 +4,14 @@
 #include <iterator>
 #include "shell_sort.h"
 using namespace std;
-int main(){
-	vector<int> test_data(10);
+int main(int argc, char* argv[]){
+
+	if(argc < 2){
+		cout << "enter size array!!!";
+		return -1;
+	}
+	int size_array = atoi(argv[1]); 
+	vector<int> test_data(size_array);
 	mt19937 generator{random_device()()};
 	uniform_int_distribution<> distribution(1, 100);
 	
