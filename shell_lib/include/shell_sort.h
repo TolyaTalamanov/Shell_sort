@@ -6,6 +6,11 @@
 #include <random> 
 #include <iterator>
 #include <vector>
+#include <chrono>
+
+using Time = std::chrono::high_resolution_clock;
+using ms   = std::chrono::milliseconds;
+using fms  = std::chrono::duration<float, std::milli>;
 
 template<typename Iterator>
 void insert_sort_with_increment(Iterator first, Iterator last, int increment)
