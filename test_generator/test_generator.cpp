@@ -51,7 +51,7 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 void writeDataToFile(vector<int> data, const string& file_path){
-	ofstream file(file_path);
+	ofstream file(file_path, ios::binary);
 	ostream_iterator<int> file_iterator(file, " ");
 	copy(data.begin(), data.end(), file_iterator);
 }
