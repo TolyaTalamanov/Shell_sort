@@ -11,6 +11,7 @@ class Checker{
 		const std::string log_file_path_ = "../checker/checker_log.txt";
 		std::ofstream log_file_;
 		std::string data_dir_path_ = "../test_generator/test_data/";
+		int count_tests_;
 
 		enum class log_params_ { NO = 1, VERDICT, MESSAGE, TIME, MEMORY };
 
@@ -31,11 +32,13 @@ class Checker{
 #endif //SHELL_SORT_CHECKER_CHECKER_H 
 	public:
 
-		Checker(){
+		Checker(count_test){
 			log_file_.open(log_file_path_);
+			count_tests_ = count_test;
 		}
 
 		void run_tests(num_test);
+		void run_tests();
 
 		~Checker(){
 			log_file_.close();

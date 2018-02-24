@@ -18,6 +18,11 @@ void Checker::run_tests(num_test){
 	}
 
 }
+void Checker::run_tests(){
+	for(int i = 0; i < count_test_; ++i){
+		run_tests(i);
+	}
+}
 
 vector<int> load_data_from_file(string file_path){
 	ifstream data_file(file_path);
