@@ -9,7 +9,7 @@ enum verdict { NO = 1, AC, WA, CE, ML, TL, RE, IL, PE, DE };
 class Checker{
 	private:
 		std::ofstream log_file_;
-		const std::string log_file_path_ = "../../shell_sort/checker/cheker_log_log.txt";
+		const std::string log_file_path_ = "../../shell_sort/checker/checker_log.txt";
 
 		enum class log_params_ { NO = 1, VERDICT, MESSAGE, TIME, MEMORY };
 
