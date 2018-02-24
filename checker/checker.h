@@ -29,12 +29,12 @@ class Checker{
 		}
 
 		void write_verdict(verdict v){
-			write_type(log_params_::VERDICT);
+			//write_type(log_params_::VERDICT);
 			log_file_ << v;
 		}
 
 		void write_message(std::string message){
-			write_type(log_params_::MESSAGE);
+			//write_type(log_params_::MESSAGE);
 			log_file_ << message;
 		}
 };
