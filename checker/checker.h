@@ -17,18 +17,8 @@ class Checker{
 		void write_type(log_params_ param){
 			log_file_ << static_cast<int>(param) << std::endl;
 		}
-
-	public:
-
-		Checker(){
-			log_file_.open(log_file_path_);
-		}
-
-		~Checker(){
-			log_file_.close();
-		}
-
 		void write_verdict(verdict v){
+
 			//write_type(log_params_::VERDICT);
 			log_file_ << v;
 		}
@@ -39,3 +29,14 @@ class Checker{
 		}
 };
 #endif //SHELL_SORT_CHECKER_CHECKER_H 
+	public:
+
+		Checker(){
+			log_file_.open(log_file_path_);
+		}
+
+		~Checker(){
+			log_file_.close();
+		}
+
+
