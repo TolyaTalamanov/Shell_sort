@@ -20,7 +20,6 @@ class Checker{
 			log_file_ << static_cast<int>(param) << std::endl;
 		}
 		void write_verdict(verdict v){
-
 			//write_type(log_params_::VERDICT);
 			log_file_ << v;
 		}
@@ -28,20 +27,18 @@ class Checker{
 			//write_type(log_params_::MESSAGE);
 			log_file_ << message;
 		}
-};
-#endif //SHELL_SORT_CHECKER_CHECKER_H 
 	public:
 
-		Checker(count_test){
+		Checker(int count_tests){
 			log_file_.open(log_file_path_);
-			count_tests_ = count_test;
+			count_tests_ = count_tests;
 		}
 
-		void run_tests(num_test);
+		void run_tests(int num_test);
 		void run_tests();
 
 		~Checker(){
 			log_file_.close();
 		}
-
-
+};
+#endif //SHELL_SORT_CHECKER_CHECKER_H 
