@@ -1,2 +1,3 @@
-set(SOURCE checker.cpp)
-add_executable(checker ${SOURCE})
+set(INCLUDE checker.h)
+set(SOURCE checker_demo.cpp)
+add_executable(checker ${SOURCE} ${INCLUDE})
