@@ -11,13 +11,14 @@ class Checker{
 		std::ofstream log_file_;
 		const std::string log_file_path_ = "../../shell_sort/checker/cheker_log_log.txt";
 
+		enum class log_params_ { NO = 1, VERDICT, MESSAGE, TIME, MEMORY };
+
 	private:
-		void write_type(log_params param){
-			log_file_ << param << std::endl;
+		void write_type(log_params_ param){
+			log_file_ << static_cast<int>(param) << std::endl;
 		}
 
 	public:
-		enum class log_params { NO = 1, VERDICT, MESSAGE, TIME, MEMORY };
 
 		Checker(){
 			log_file_.open(log_file_path_);
@@ -28,12 +29,13 @@ class Checker{
 		}
 
 		void write_verdict(verdict v){
-			write_type(log_params::VERDICT);
+			write_type(log_params_::VERDICT);
 			log_file_ << v;
 		}
 
 		void write_message(std::string message){
-			write_type(log_params::MESSAGE);
+			write_type(log_params_::MESSAGE);
 			log_file_ << message;
 		}
-}
+};
+#endif //SHELL_SORT_CHECKER_CHECKER_H 
