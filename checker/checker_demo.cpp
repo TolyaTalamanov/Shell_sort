@@ -7,8 +7,18 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-	Checker checker(7);
-	checker.run_tests();
+	int total_count_tests = 7;
+	Checker checker(total_count_tests);
+
+	if(argc > 1){
+		int num_test; 	
+		for(int i = 1; i < argc; ++i){
+			num_test = atoi(argv[i]);
+			checker.run_tests(num_test);
+		}
+	}else{
+		checker.run_tests();
+	}
 
 	return 0;
 }
