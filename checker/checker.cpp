@@ -31,6 +31,20 @@ void Checker::run_tests(){
 	}
 }
 
+void Checker::write_type(log_params_ param){
+	log_file_ << static_cast<int>(param) << std::endl;
+}
+
+void Checker::write_verdict(verdict v){
+	//write_type(log_params_::VERDICT);
+	log_file_ << v;
+}
+
+void Checker::write_message(std::string message){
+	//write_type(log_params_::MESSAGE);
+	log_file_ << message << "\n";
+}
+
 vector<int> load_data_from_file(string file_path){
 	ifstream data_file(file_path);
 	vector<int> data;
