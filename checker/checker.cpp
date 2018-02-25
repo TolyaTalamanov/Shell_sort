@@ -17,10 +17,10 @@ void Checker::run_tests(int num_test){
 	sort(true_data.begin(), true_data.end());
 
 	if(output_data == true_data){
-		write_message("AC. Arrays are equal.");
+		write_message("[ TEST " + to_string(num_test) + " ] AC. Arrays are equal.");
 	}	
 	else{
-		write_message("WA. Output is't correct");
+		write_message("[ TEST " + to_string(num_test) + " ] WA. Output is't correct.");
 	}
 
 }
