@@ -7,8 +7,8 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-	//Checker checker(7);
-	//checker.run_tests();
+	Checker checker(7);
+	checker.run_tests();
 
 	return 0;
 }
