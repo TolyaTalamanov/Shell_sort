@@ -7,6 +7,7 @@ using namespace std;
 vector<int> load_data_from_file(string file_path);
 
 void Checker::run_tests(int num_test){
+
 	string output_data_path = data_dir_path_ + to_string(num_test) + ".ans";
 
 	auto output_data = load_data_from_file(output_data_path);
@@ -16,6 +17,7 @@ void Checker::run_tests(int num_test){
 	}	
 	else{
 		write_message("[ TEST " + to_string(num_test) + " ] WA. Array is't sorted.");
+
 	}
 
 }
