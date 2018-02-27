@@ -7,10 +7,8 @@ using namespace std;
 vector<int> load_data_from_file(string file_path);
 
 void Checker::run_tests(int num_test){
-	string input_data_path  = data_dir_path_ + to_string(num_test);
 	string output_data_path = data_dir_path_ + to_string(num_test) + ".ans";
 
-	auto input_data  = load_data_from_file(input_data_path);
 	auto output_data = load_data_from_file(output_data_path);
 
 	vector<int> true_data(input_data.begin(), input_data.end());
