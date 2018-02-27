@@ -12,10 +12,10 @@ void Checker::run_tests(int num_test){
 	auto output_data = load_data_from_file(output_data_path);
 
 	if(is_sorted(output_data.begin(), output_data.end())){
-		write_message("[ TEST " + to_string(num_test) + " ] AC. Arrays are equal.");
+		write_message("[ TEST " + to_string(num_test) + " ] AC. Array is sorted.");
 	}	
 	else{
-		write_message("[ TEST " + to_string(num_test) + " ] WA. Output is't correct.");
+		write_message("[ TEST " + to_string(num_test) + " ] WA. Array is't sorted.");
 	}
 
 }
