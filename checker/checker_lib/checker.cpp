@@ -11,9 +11,6 @@ void Checker::run_tests(int num_test){
 
 	auto output_data = load_data_from_file(output_data_path);
 
-	vector<int> true_data(input_data.begin(), input_data.end());
-	sort(true_data.begin(), true_data.end());
-
 	if(output_data == true_data){
 		write_message("[ TEST " + to_string(num_test) + " ] AC. Arrays are equal.");
 	}	
