@@ -7,20 +7,17 @@ using namespace std;
 vector<int> load_data_from_file(string file_path);
 
 void Checker::run_tests(int num_test){
-	string input_data_path  = data_dir_path_ + to_string(num_test);
+
 	string output_data_path = data_dir_path_ + to_string(num_test) + ".ans";
 
-	auto input_data  = load_data_from_file(input_data_path);
 	auto output_data = load_data_from_file(output_data_path);
 
-	vector<int> true_data(input_data.begin(), input_data.end());
-	sort(true_data.begin(), true_data.end());
-
-	if(output_data == true_data){
-		write_message("[ TEST " + to_string(num_test) + " ] AC. Arrays are equal.");
+	if(is_sorted(output_data.begin(), output_data.end())){
+		write_message("[ TEST " + to_string(num_test) + " ] AC. Array is sorted.");
 	}	
 	else{
-		write_message("[ TEST " + to_string(num_test) + " ] WA. Output is't correct.");
+		write_message("[ TEST " + to_string(num_test) + " ] WA. Array is't sorted.");
+
 	}
 
 }
