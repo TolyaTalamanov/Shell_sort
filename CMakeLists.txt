@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 add_definitions(-std=c++14)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY ShellSort)
 project(${LIBRARY} )
 set(INCLUDE shell_lib/include/shell_sort.h)
