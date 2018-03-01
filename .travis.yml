@@ -7,8 +7,8 @@ os:
     - linux
 
 compiler:
-    - gcc
-
+    - g++
+install: export CXX="g++-5"
 addons:
     apt:
         sources:
