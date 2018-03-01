@@ -6,8 +6,8 @@ langauge:   cpp
 os:
     - linux
 
-compiler:
-    - g++
+compiler: g++
+
 install: export CXX="g++-5"
 addons:
     apt:
@@ -17,6 +17,9 @@ addons:
         packages:
             - g++-5
             - gcc-5
+
+before_install: sudo apt-get update -qq
+
 script:
     - mkdir build && cd build
     - cmake -DCMAKE_BUILD_TYPE=Release .. 
