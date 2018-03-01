@@ -26,5 +26,5 @@ script:
     - cmake -DCMAKE_BUILD_TYPE=Release .. 
     - make -j4
     - cd bin/
-    - ./checker 
     - ./test_generator 
+    - ./checker 
