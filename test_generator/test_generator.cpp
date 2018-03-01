@@ -48,10 +48,10 @@ int main(int argc, char* argv[]){
 	test_data[6].resize(1);
 	
 	for(int i = 0; i < count_tests; ++i){
-		writeDataToFile(test_data[i], "/home/tolik/project/shell_sort/test_generator/test_data/" + 
+		writeDataToFile(test_data[i], "../../test_generator/test_data/" + 
 										to_string(i));
 		shell_sort(test_data[i].begin(), test_data[i].end());
-		writeDataToFile(test_data[i], "/home/tolik/project/shell_sort/test_generator/test_data/" + 
+		writeDataToFile(test_data[i], "../../test_generator/test_data/" + 
 										to_string(i) + ".ans");
 
 	}

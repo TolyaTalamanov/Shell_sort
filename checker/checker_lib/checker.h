@@ -22,9 +22,9 @@ class Checker{
 		}
 
 	private:
-		const std::string log_file_path_ = "../checker/checker_log.txt";
+		const std::string log_file_path_ = "../../checker/checker_log.txt";
 		std::ofstream log_file_;
-		std::string data_dir_path_ = "../test_generator/test_data/";
+		std::string data_dir_path_ = "../../test_generator/test_data/";
 		int count_tests_;
 
 		enum class log_params_ { NO = 1, VERDICT, MESSAGE, TIME, MEMORY };
